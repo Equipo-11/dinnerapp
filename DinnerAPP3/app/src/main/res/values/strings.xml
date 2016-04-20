@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">DinnerAPP</string>
+    <string name="id">ID</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="country">Country</string>
+    <string name="insertar">Insertar</string>
+    <string name="mostrar">Mostrar</string>
+</resources>
