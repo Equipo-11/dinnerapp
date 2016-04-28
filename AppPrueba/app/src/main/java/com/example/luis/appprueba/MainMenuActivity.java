@@ -42,7 +42,10 @@ public class MainMenuActivity extends AppCompatActivity {
                 break;
             case R.id.add:
                 Intent myIntent;
+                Intent user = getIntent();
+                String username2 = user.getStringExtra("iduser");
                 myIntent = new Intent(getApplicationContext(), NewEventActivity.class);
+                myIntent.putExtra("iduser",username2);
                 startActivity(myIntent);
                 break;
             case R.id.action_settings:

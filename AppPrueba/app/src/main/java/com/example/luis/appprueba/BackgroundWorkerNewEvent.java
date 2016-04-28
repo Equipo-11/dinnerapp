@@ -32,16 +32,17 @@ public class BackgroundWorkerNewEvent extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-        String login_url = "http://10.0.2.2/newuser.php";
-        if(type.equals("newuser")) {
+        String login_url = "http://10.0.2.2/newevent.php";
+        if(type.equals("newevent")) {
             try {
-                String national = params[1];
-                String date = params[2];
-                String country = params[3];
-                String city = params[4];
-                String address = params[5];
-                String participant = params[6];
-                String description = params[7];
+                String autor = params[1];
+                String national = params[2];
+                String date = params[3];
+                String country = params[4];
+                String city = params[5];
+                String address = params[6];
+                String participant = params[7];
+                String description = params[8];
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -49,7 +50,8 @@ public class BackgroundWorkerNewEvent extends AsyncTask<String,Void,String> {
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("national","UTF-8")+"="+URLEncoder.encode(national,"UTF-8")+"&"
+                String post_data = URLEncoder.encode("autor","UTF-8")+"="+URLEncoder.encode(autor,"UTF-8")+"&"
+                        +URLEncoder.encode("national","UTF-8")+"="+URLEncoder.encode(national,"UTF-8")+"&"
                         +URLEncoder.encode("date","UTF-8")+"="+URLEncoder.encode(date,"UTF-8")+"&"
                         +URLEncoder.encode("country","UTF-8")+"="+URLEncoder.encode(country,"UTF-8")+"&"
                         +URLEncoder.encode("city","UTF-8")+"="+URLEncoder.encode(city,"UTF-8")+"&"
