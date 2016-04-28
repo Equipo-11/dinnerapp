@@ -1,10 +1,12 @@
 package com.example.luis.appprueba;
 
+/**
+ * Created by Luis on 21/04/2016.
+ */
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,23 +21,24 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 /**
- * Created by Ireniita on 25/04/2016.
+ * Created by ProgrammingKnowledge on 1/5/2016.
  */
-public class BackgroundWorkerProfile extends AsyncTask<String,Void,String> {
+public class BackgroundWorker extends AsyncTask<String,Void,String> {
     Context context;
     AlertDialog alertDialog;
-    BackgroundWorkerProfile (Context ctx) {
+    String username = "";
+    BackgroundWorker (Context ctx) {
         context = ctx;
     }
-
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-        String login_url = "http://192.168.1.3/profile.php";
-        //String login_url = "http://equipo11cm.ddns.net/profile.php";
-        if(type.equals("userProfile")) {
+        String login_url = "http://10.0.2.2/login.php";
+        if(type.equals("login")) {
             try {
-                String id = params[1];
+                username = params[1];
+                String user_name = params[1];
+                String password = params[2];
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -43,7 +46,8 @@ public class BackgroundWorkerProfile extends AsyncTask<String,Void,String> {
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("id","UTF-8")+"="+URLEncoder.encode(id,"UTF-8");
+                String post_data = URLEncoder.encode("id","UTF-8")+"="+URLEncoder.encode(user_name,"UTF-8")+"&"
+                        +URLEncoder.encode("pass","UTF-8")+"="+URLEncoder.encode(password,"UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -67,16 +71,24 @@ public class BackgroundWorkerProfile extends AsyncTask<String,Void,String> {
         }
         return null;
     }
+
     @Override
     protected void onPreExecute() {
-        /*alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Login Status");*/
+        alertDialog = new AlertDialog.Builder(context).create();
+        alertDialog.setTitle("Login Status");
     }
 
     @Override
     protected void onPostExecute(String result) {
-        //alertDialog.setMessage(result);
+        alertDialog.setMessage(result);
         //alertDialog.show();
+        if(result.equals("Login success")){
+            Intent i = new Intent(context,MainMenuActivity.class);
+            i.putExtra("iduser",username);
+            context.startActivity(i);
+        }else{
+            alertDialog.show();
+        }
     }
 
     @Override

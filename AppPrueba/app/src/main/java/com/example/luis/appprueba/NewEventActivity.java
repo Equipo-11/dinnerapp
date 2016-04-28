@@ -12,7 +12,7 @@ public class NewEventActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_newuser);
+        setContentView(R.layout.activity_newevent);
         et_national = (EditText) findViewById(R.id.editText);
         et_date = (EditText) findViewById(R.id.editText2);
         et_country = (EditText) findViewById(R.id.editText3);
@@ -23,7 +23,7 @@ public class NewEventActivity extends AppCompatActivity {
     }
 
 
-    public void enviarbutton(View view) {
+    public void enviarbutton1(View view) {
         String national = et_national.getText().toString();
         String date = et_date.getText().toString();
         String country = et_country.getText().toString();
@@ -61,7 +61,7 @@ public class NewEventActivity extends AppCompatActivity {
 
 
 
-    public void cancelbutton(View view) {
+    public void cancelbutton1(View view) {
         finish();
     }
 }

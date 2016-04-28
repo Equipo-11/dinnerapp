@@ -7,6 +7,8 @@
     <string name="type_country">Country</string>
 
     <string name="type_newuser">New User</string>
+    <string name="type_userprofile">Profile</string>
+    <string name="type_newevent">New Event</string>
     <string name="type_mainmenu">Main Menu</string>
     <string name="type_login">DinerApp</string>
 

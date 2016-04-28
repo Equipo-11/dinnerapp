@@ -33,14 +33,29 @@ public class MainMenuActivity extends AppCompatActivity {
     }
 
 
-    public boolean OnOptionsItemSelected(MenuItem item){
+    public boolean onOptionsItemSelected(MenuItem item){
 
         switch(item.getItemId()){
 
             case R.id.closesession:
-                Toast.makeText(this, "this is my Toast message!!! =)", Toast.LENGTH_LONG).show();
-                //finish();
+                finish();
+                break;
+            case R.id.add:
+                Intent myIntent;
+                myIntent = new Intent(getApplicationContext(), NewEventActivity.class);
+                startActivity(myIntent);
+                break;
+            case R.id.action_settings:
+                Intent myIntent2;
+                Intent me = getIntent();
+                String username = me.getStringExtra("iduser");
+                myIntent2 = new Intent(getApplicationContext(), UserProfile.class);
+                myIntent2.putExtra("iduser",username);
+                startActivity(myIntent2);
 
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
         }
         return true;
     }

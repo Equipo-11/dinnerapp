@@ -1,0 +1,51 @@
+activity main
+-
+btnLogin -
+imageView -
+button -
+etUserName -
+etPassword -
+-
+activity main menu (main menu)
+-
+closesession -
+search -
+add -
+-
+new event
+-
+button2 -> botoncancelar -
+button3 -> botonenviar -
+editText -> editText5 -
+editText2 -> editText9 -
+editText3 -> editText10 -
+editText4 -> editText11 -
+editText6 -> editText12 -
+editText7
+editText8 -
+-
+new user
+-
+button2 -
+button3 -
+editText -
+editText2 -
+editText3 -
+editText4 -
+editText6 -
+-
+user profile
+-
+textView -> textView13 -
+textView2 -> textView14 - 
+textView3 -> textView15 -
+textView5 -> textView16 -
+textView6 -> textView17 -
+textView7 -> textView18 -
+textID -
+textEmail -
+textPhone -
+textCountry -
+button4 -
+
+-

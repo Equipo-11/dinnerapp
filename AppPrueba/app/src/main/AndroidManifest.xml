@@ -25,6 +25,12 @@
         <activity
             android:name=".MainMenuActivity"
             android:label="Main Menu" />
+        <activity
+            android:name=".NewEventActivity"
+            android:label="@string/type_newevent" />
+        <activity
+            android:name=".UserProfile"
+            android:label="@string/type_userprofile" />
     </application>
 
 </manifest>

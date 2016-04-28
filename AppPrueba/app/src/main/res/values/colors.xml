@@ -4,7 +4,8 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
-    <color name="colorBack">#d85e76</color>
+    <!--<color name="colorBack">#d85e76</color>-->
+    <color name="colorBack">#87CEEB</color>
     <color name="colorBut">#6ecce7</color>
     <color name="blanco">#FFFFFF</color>
 </resources>
