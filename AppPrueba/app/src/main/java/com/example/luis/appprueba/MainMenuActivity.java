@@ -48,6 +48,11 @@ public class MainMenuActivity extends AppCompatActivity {
                 myIntent.putExtra("iduser",username2);
                 startActivity(myIntent);
                 break;
+            case R.id.search:
+                Intent myIntent3;
+                myIntent3 = new Intent(getApplicationContext(), SearchEvent.class);
+                startActivity(myIntent3);
+                break;
             case R.id.action_settings:
                 Intent myIntent2;
                 Intent me = getIntent();

@@ -31,6 +31,9 @@
         <activity
             android:name=".UserProfile"
             android:label="@string/type_userprofile" />
+        <activity
+            android:name=".EventActivity"
+            android:label="Event"/>
     </application>
 
 </manifest>
