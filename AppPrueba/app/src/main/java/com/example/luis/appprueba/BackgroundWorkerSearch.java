@@ -1,4 +1,3 @@
-/*
 package com.example.luis.appprueba;
 
 import android.app.AlertDialog;
@@ -18,10 +17,10 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-*/
+
 /**
  * Created by Ireniita on 29/04/2016.
- *//*
+ */
 
 public class BackgroundWorkerSearch extends AsyncTask<String,Void,String> {
     Context context;
@@ -29,6 +28,7 @@ public class BackgroundWorkerSearch extends AsyncTask<String,Void,String> {
     BackgroundWorkerSearch (Context ctx) {
         context = ctx;
     }
+    String tag = "SEARCH";
 
     @Override
     protected String doInBackground(String... params) {
@@ -37,9 +37,9 @@ public class BackgroundWorkerSearch extends AsyncTask<String,Void,String> {
         String city = params[2];
         String date = params[3];
         String food = params[4];
-        //String login_url = "http://192.168.1.3/profile.php";
-        String login_url = "http://10.0.2.2/profile.php";
-        //String login_url = "http://equipo11cm.ddns.net/profile.php";
+        //String login_url = "http://192.168.1.3/s_event.php";
+        String login_url = "http://10.0.2.2/s_event.php";
+        //String login_url = "http://equipo11cm.ddns.net/s_event.php";
         if(type.equals("searchEvent")) {
             try {
                 URL url = new URL(login_url);
@@ -49,7 +49,10 @@ public class BackgroundWorkerSearch extends AsyncTask<String,Void,String> {
                 httpURLConnection.setDoInput(true);
                 OutputStream outputStream = httpURLConnection.getOutputStream();
                 BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
-                String post_data = URLEncoder.encode("id", "UTF-8")+"="+URLEncoder.encode(id,"UTF-8");
+                String post_data = URLEncoder.encode("country", "UTF-8")+"="+URLEncoder.encode(country,"UTF-8")+"&"
+                        +URLEncoder.encode("city","UTF-8")+"="+URLEncoder.encode(city,"UTF-8")+"&"
+                        +URLEncoder.encode("date","UTF-8")+"="+URLEncoder.encode(date,"UTF-8")+"&"
+                        +URLEncoder.encode("food","UTF-8")+"="+URLEncoder.encode(food,"UTF-8");
                 bufferedWriter.write(post_data);
                 bufferedWriter.flush();
                 bufferedWriter.close();
@@ -76,9 +79,9 @@ public class BackgroundWorkerSearch extends AsyncTask<String,Void,String> {
     }
     @Override
     protected void onPreExecute() {
-        */
-/*alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Login Status");*//*
+
+       /* alertDialog = new AlertDialog.Builder(context).create();
+        alertDialog.setTitle("Login Status");*/
 
     }
 
@@ -93,4 +96,3 @@ public class BackgroundWorkerSearch extends AsyncTask<String,Void,String> {
         super.onProgressUpdate(values);
     }
 }
-*/
