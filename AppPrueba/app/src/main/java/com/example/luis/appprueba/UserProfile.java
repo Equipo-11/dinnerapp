@@ -131,7 +131,7 @@ public class UserProfile extends AppCompatActivity {
         findViewById(R.id.editeP2).setVisibility(View.INVISIBLE);
         findViewById(R.id.textCountry).setVisibility(View.VISIBLE);
         findViewById(R.id.editeP3).setVisibility(View.INVISIBLE);
-        findViewById(R.id.editProfileButton).setVisibility(View.VISIBLE);
+        findViewById(R.id.editProfileButton).setVisibility(View.INVISIBLE);
 
     }
 }
