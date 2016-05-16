@@ -33,10 +33,11 @@
             android:label="@string/type_userprofile" />
         <activity
             android:name=".EventActivity"
-            android:label="Event"/>
+            android:label="Event" />
         <activity
             android:name=".SearchEvent"
-            android:label="type_searchevent"/>
+            android:label="type_searchevent" />
+        <activity android:name=".ChangePassword"></activity>
     </application>
 
 </manifest>
