@@ -116,6 +116,15 @@ public class UserProfile extends AppCompatActivity {
 
     }
 
+    public void myEvents(View view){
+        Intent myIntent4;
+        Intent me = getIntent();
+        String username = me.getStringExtra("iduser");
+        myIntent4 = new Intent(getApplicationContext(), MyEventsActivity.class);
+        myIntent4.putExtra("iduser",username);
+        startActivity(myIntent4);
+    }
+
     public void createdEvents(View view){
         Intent myIntent2;
         Intent me = getIntent();

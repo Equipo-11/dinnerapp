@@ -41,8 +41,14 @@
             android:name=".CreatedEventsActivity"
             android:label="Created Events" />
         <activity
+            android:name=".MyEventsActivity"
+            android:label="My Events"
+            />
+        <activity
             android:name=".FiltredEvents"
-            android:label="Filtred Events" />
+            android:label="FiltredEvents"
+            />
+
     </application>
 
 </manifest>

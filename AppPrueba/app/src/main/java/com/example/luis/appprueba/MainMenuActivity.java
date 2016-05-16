@@ -25,6 +25,7 @@ import java.util.concurrent.ExecutionException;
 public class MainMenuActivity extends AppCompatActivity {
     private ListView m_listview;
     String tag = "MAINMENU";
+    String aux;
     String username;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,9 +54,10 @@ public class MainMenuActivity extends AppCompatActivity {
 
         for(String i:split){
             String[] split1 = i.split(",");
-            String s = "· Autor: "+split1[0]+" , CF: "+split1[1]+" , Date: "+split1[2]+" , Country: "+split1[3]+" , City: "+split1[4]+" , Num. of participants: "+split1[5];
+            String s = "· Autor: "+split1[0]+" , CF: "+split1[1]+" , Date: "+split1[2]+" , Country: "+split1[3]+" , City: "+split1[4]+" , Num. of participants: "+split1[5]+" , Event Code: "+split1[6];
             items.add(s);
         }
+
         //Log.d(tag, String.valueOf(split.length));
 
         /*String[] split = res.split(",");
@@ -81,6 +83,15 @@ public class MainMenuActivity extends AppCompatActivity {
 
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 String evento = ((TextView) view).getText().toString();
+                Log.d(tag, evento);
+                String[] split1 = evento.split(",");
+                String[] idev = split1[6].split("Event Code: ");
+                Log.d(tag, idev[1]);
+                Intent myIntent4;
+                myIntent4 = new Intent(getApplicationContext(), EventActivity.class);
+                myIntent4.putExtra("idev",idev[1]);
+                myIntent4.putExtra("iduser",username);
+                startActivity(myIntent4);
 
             }
         });

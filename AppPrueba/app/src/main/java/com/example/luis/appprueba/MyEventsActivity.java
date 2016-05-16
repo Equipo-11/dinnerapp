@@ -15,7 +15,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
 
-public class CreatedEventsActivity extends AppCompatActivity {
+public class MyEventsActivity extends AppCompatActivity {
     private ListView m_listview;
     String tag = "CREATED";
     String username;
@@ -25,7 +25,7 @@ public class CreatedEventsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main_menu);
 
         String type = "mainmenu";
-        BackgroundWorkerCreatedEvents backgroundWorker = new BackgroundWorkerCreatedEvents(this);
+        BackgroundWorkerMyEvents backgroundWorker = new BackgroundWorkerMyEvents(this);
         Intent me = getIntent();
         username = me.getStringExtra("iduser");
         backgroundWorker.execute(type, username);

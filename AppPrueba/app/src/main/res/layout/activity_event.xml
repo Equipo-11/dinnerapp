@@ -223,30 +223,6 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/blanco"
-        android:text="Show"
-        android:onClick="mostrarPrueba"
-        android:id="@+id/buttonPruebaEvento"
-        android:background="@color/colorPrimary"
-        android:layout_above="@+id/button2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="56dp" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/blanco"
-        android:hint="@string/type_userid"
-        android:ems="10"
-        android:id="@+id/editTextPruebaEvento"
-        android:layout_alignTop="@+id/buttonPruebaEvento"
-        android:layout_centerHorizontal="true" />
 
     <Button
         style="?android:attr/buttonStyleSmall"
@@ -259,5 +235,18 @@
         android:background="@color/colorPrimary"
         android:layout_above="@+id/button2"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/blanco"
+        android:onClick="eliminarEvento"
+        android:text="Delete"
+        android:id="@+id/button7"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

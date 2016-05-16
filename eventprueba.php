@@ -67,6 +67,20 @@ if(($type == 'eventPrueba')==1){
 
 		echo "no hay coincidencia";
 	}
+}else if(($type == 'eliminarEvento')){
+  $id_event = $_POST["id_event"];
+ $username = $_POST["username"];
+  $sql = "SELECT * FROM eventos WHERE id_event like '$id_event' and autor like '$username'";
+  $result = mysqli_query($conn,$sql);
+  if(mysqli_num_rows($result)==1){
+    //es el autor
+    $sql = "DELETE FROM `eventos` WHERE id_event like '$id_event'";
+    $result = mysqli_query($conn,$sql);
+    echo "evento eliminado";
+  }else{
+    echo "no puedes eliminar el evento";
+  }
+  
 }
 
 
