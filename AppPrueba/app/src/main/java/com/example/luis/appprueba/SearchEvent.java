@@ -45,11 +45,16 @@ public class SearchEvent extends AppCompatActivity {
             e.printStackTrace();
         }
         String[] row = res.split("--");
-        int nr =  (row.length);
+        Intent myIntent = new Intent(getApplicationContext(),FiltredEvents.class);
+        myIntent.putExtra("eventos",row);
+        /*int nr =  (row.length);
         for(int i = 0;i<row.length;i++) {
             String[] split = row[i].split(",");
             Log.d(tag,split[1]);
-        }
+            myIntent.putExtra("eventos",);
+        }*/
+        startActivity(myIntent);
+
 
     }
 }

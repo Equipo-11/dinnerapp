@@ -10,7 +10,7 @@ $mysql_qry = "select * from eventos where country='$country' and city='$city' an
 $result = mysqli_query($conn ,$mysql_qry);
 
 while($row = mysqli_fetch_row($result)){
-	echo $row['0'],",",$row["1"],",",$row["2"],",",$row["3"],",",$row["4"],",",$row["5"],",",$row["6"],",",$row["7"],"--";
+	echo $row['0'],",",$row['1'],",",$row["2"],",",$row["3"],",",$row["4"],",",$row["5"],",",$row["6"],",",$row["7"],",",$row["8"],"--";
 	
 }
 
