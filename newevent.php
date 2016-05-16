@@ -8,7 +8,12 @@ $city = $_POST["city"];
 $address = $_POST["address"];
 $participant = $_POST["participant"];
 $description = $_POST["description"];
-$mysql_qry = "INSERT INTO `eventos`(`autor`, `national`, `date`, `country`, `city`, `address`, `participant`, `description`) VALUES ('$autor','$national','$date','$country','$city','$address','$participant','$description');";
+$sql = "SELECT * FROM eventos where autor like '$autor' and date like '$date'";
+$result = mysqli_query($conn,$sql);
+if(mysqli_num_rows($result) > 0) {
+	//Ya tiene un evento para ese dia
+}else{
+	$mysql_qry = "INSERT INTO `eventos`(`autor`, `national`, `date`, `country`, `city`, `address`, `participant`, `description`) VALUES ('$autor','$national','$date','$country','$city','$address','$participant','$description');";
 $result = mysqli_query($conn ,$mysql_qry);
 //Cogemos id de usuario
 $sql = "select * from users where id like '$autor' ";  
@@ -24,8 +29,6 @@ $id_evento = $array['id_event'];
 $unirse = "INSERT INTO `participantes`(`id_evento`, `id_usuario`) VALUES ('$id_evento','$id_user')";
 $result = mysqli_query($conn,$unirse);
 
-
-
-
+}
 
 ?>

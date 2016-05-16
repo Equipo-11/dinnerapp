@@ -38,8 +38,8 @@ public class EventActivity extends AppCompatActivity {
     public void mostrarPrueba(View view){
         String type = "eventPrueba";
         BackgroundWorkerEventPrueba backgroundWorker = new BackgroundWorkerEventPrueba(this);
-        String national1=id.getText().toString();
-        backgroundWorker.execute(type, national1);
+        String id_evento=id.getText().toString();
+        backgroundWorker.execute(type, id_evento);
         String res= null;
         try {
             res = backgroundWorker.get();
@@ -57,9 +57,10 @@ public class EventActivity extends AppCompatActivity {
         c6.setText(split[6]);
         c7.setText(split[7]);
         c8.setText(split[8]);
-        Log.d("SPLIT0",split[0]);
+        Log.d("eventPruebaSplit",split[0]);
         id_event_st = split[0];
         mostrarParticipantes(view, id_event_st);
+        toString(c9.getText());
     }
 
     public void unirseAlEvento(View view){

@@ -55,7 +55,7 @@ public class BackgroundWorkerEventPrueba extends AsyncTask<String,Void,String> {
                 while((line = bufferedReader.readLine())!= null) {
                     result += line;
                 }
-                Log.d(tag,result);
+                Log.d("eventPruebaBackground",result);
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
@@ -68,7 +68,7 @@ public class BackgroundWorkerEventPrueba extends AsyncTask<String,Void,String> {
         }else if (type.equals("mostrarParticipantes")) {
             try {
                 String id = params[1];
-                Log.d("mostrarParticipantes",id);
+                Log.d("mostrarParticipantesId",id);
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -87,10 +87,9 @@ public class BackgroundWorkerEventPrueba extends AsyncTask<String,Void,String> {
                 String result = "";
                 String line = "";
                 while ((line = bufferedReader.readLine()) != null) {
-                    Log.d("mostrarParticipantes", line);
                     result += line;
                 }
-                Log.d(tag, result);
+                Log.d("mostrarPartResult", result);
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
@@ -104,8 +103,8 @@ public class BackgroundWorkerEventPrueba extends AsyncTask<String,Void,String> {
             try{
                 String id_event_st = params[1];
                 String username = params[2];
-                Log.d(type,id_event_st);
-                Log.d(type,username);
+                Log.d(type+"idevent",id_event_st);
+                Log.d(type+"username",username);
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -126,10 +125,9 @@ public class BackgroundWorkerEventPrueba extends AsyncTask<String,Void,String> {
                 String result = "";
                 String line = "";
                 while ((line = bufferedReader.readLine()) != null) {
-                    Log.d(type, line);
                     result += line;
                 }
-                Log.d(type, result);
+                Log.d("unirseResult", result);
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();

@@ -113,8 +113,6 @@ public class UserProfile extends AppCompatActivity {
         }
     }
     public void changePassword(View view){
-        Intent myIntent = new Intent(getApplicationContext(),ChangePassword.class);
-        startActivity(myIntent);
 
     }
 

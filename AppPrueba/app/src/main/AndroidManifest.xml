@@ -36,16 +36,11 @@
             android:label="Event" />
         <activity
             android:name=".SearchEvent"
-<<<<<<< HEAD
-            android:label="type_searchevent" />
-        <activity android:name=".ChangePassword"></activity>
-=======
             android:label="Search Event" />
         <activity
             android:name=".CreatedEventsActivity"
             android:label="Created Events"
             ></activity>
->>>>>>> a76e78066e845bfbd76d4f0bb72047b5d3dfede4
     </application>
 
 </manifest>
