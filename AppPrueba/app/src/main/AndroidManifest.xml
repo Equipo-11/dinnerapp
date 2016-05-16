@@ -39,8 +39,10 @@
             android:label="Search Event" />
         <activity
             android:name=".CreatedEventsActivity"
-            android:label="Created Events"
-            ></activity>
+            android:label="Created Events" />
+        <activity
+            android:name=".FiltredEvents"
+            android:label="Filtred Events" />
     </application>
 
 </manifest>
