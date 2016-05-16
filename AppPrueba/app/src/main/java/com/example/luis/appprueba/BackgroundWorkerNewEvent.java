@@ -85,7 +85,7 @@ public class BackgroundWorkerNewEvent extends AsyncTask<String,Void,String> {
     @Override
     protected void onPreExecute() {
         //alertDialog = new AlertDialog.Builder(context).create();
-        //alertDialog.setTitle("Vuelva a la pagina de Login");
+        //alertDialog.setTitle("");
     }
 
     @Override

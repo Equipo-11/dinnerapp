@@ -8,7 +8,7 @@ $city = $_POST["city"];
 $address = $_POST["address"];
 $participant = $_POST["participant"];
 $description = $_POST["description"];
-$mysql_qry = "insert into event values ('$autor','$national','$date','$country','$city','$address','$participant','$description');";
+$mysql_qry = "INSERT INTO `eventos`(`autor`, `national`, `date`, `country`, `city`, `address`, `participant`, `description`) VALUES ('$autor','$national','$date','$country','$city','$address','$participant','$description');";
 $result = mysqli_query($conn ,$mysql_qry);
 
 

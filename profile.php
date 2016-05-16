@@ -4,7 +4,7 @@ $type = $_POST["type"];
 $id = $_POST["id"];
 
 if(($type=='userProfile')==1){
-	$mysql_qry = "select * from practica where id='$id';";
+	$mysql_qry = "select * from users where id='$id';";
 	$result = mysqli_query($conn ,$mysql_qry);
 	if(mysqli_num_rows($result) > 0) {
 		$array = mysqli_fetch_array($result,MYSQLI_ASSOC);
@@ -16,7 +16,7 @@ else{
 	$email = $_POST["email"];
 	$phone = $_POST["phone"];
 	$country = $_POST["country"];
-	$mysql_qry = "UPDATE practica SET email='$email', phone='$phone', country='$country' WHERE id='$id'";
+	$mysql_qry = "UPDATE users SET email='$email', phone='$phone', country='$country' WHERE id='$id'";
 	$result = mysqli_query($conn ,$mysql_qry);
 	echo "Actualizacion exitosa";
 }

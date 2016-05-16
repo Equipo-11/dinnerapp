@@ -30,10 +30,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/blanco"
-        android:onClick="enviarbutton1"
+        android:onClick="crearEventoButton"
         android:background="@color/colorPrimary"
         android:text="Send"
-        android:id="@+id/botonenviar"
+        android:id="@+id/botonCrearEvento"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
