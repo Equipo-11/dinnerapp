@@ -112,16 +112,17 @@ public class MainMenuActivity extends AppCompatActivity {
                 startActivity(myIntent);
                 break;
             case R.id.search:
-                /*Intent myIntent3;
+                Intent myIntent3;
                 myIntent3 = new Intent(getApplicationContext(), SearchEvent.class);
                 startActivity(myIntent3);
-                break;*/
-                Intent myIntent3;
+                break;
+                /*Intent myIntent3;
                 Intent me2 = getIntent();
                 String username3 = me2.getStringExtra("iduser");
                 myIntent3 = new Intent(getApplicationContext(), EventActivity.class);
                 myIntent3.putExtra("iduser",username3);
                 startActivity(myIntent3);
+                break;*/
             case R.id.action_settings:
                 Intent myIntent2;
                 Intent me = getIntent();

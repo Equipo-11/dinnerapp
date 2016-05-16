@@ -10,6 +10,22 @@ $participant = $_POST["participant"];
 $description = $_POST["description"];
 $mysql_qry = "INSERT INTO `eventos`(`autor`, `national`, `date`, `country`, `city`, `address`, `participant`, `description`) VALUES ('$autor','$national','$date','$country','$city','$address','$participant','$description');";
 $result = mysqli_query($conn ,$mysql_qry);
+//Cogemos id de usuario
+$sql = "select * from users where id like '$autor' ";  
+$result = mysqli_query($conn,$sql);
+$array = mysqli_fetch_array($result,MYSQLI_ASSOC);
+$id_user = $array["id_user"];
+//Cogemos id de evento
+$mysql_qry = "select * from eventos where national='$national';";
+$result = mysqli_query($conn ,$mysql_qry);
+$array = mysqli_fetch_array($result,MYSQLI_ASSOC);
+$id_evento = $array['id_event'];
+//nos unimos al evento
+$unirse = "INSERT INTO `participantes`(`id_evento`, `id_usuario`) VALUES ('$id_evento','$id_user')";
+$result = mysqli_query($conn,$unirse);
+
+
+
 
 
 ?>

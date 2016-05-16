@@ -78,8 +78,7 @@ public class EventActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        Log.d("unirsefinal",res);
-        Log.d(type,res);
+        mostrarParticipantes(view, id_event_st);
         //String[] split = res.split()
         /*String[] split = res.split(",");
         String result = "";
