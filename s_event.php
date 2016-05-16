@@ -6,7 +6,7 @@ $city = $_POST["city"];
 $date = $_POST["date"];
 $food = $_POST["food"];
 
-$mysql_qry = "select * from event where country='$country' and city='$city' and date='$date' and national='$food';";
+$mysql_qry = "select * from eventos where country='$country' and city='$city' and date='$date' and national='$food';";
 $result = mysqli_query($conn ,$mysql_qry);
 
 while($row = mysqli_fetch_row($result)){

@@ -28,6 +28,7 @@ public class BackgroundWorkerEventPrueba extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
+        Log.d("TYPE",type);
         //String login_url = "http://192.168.1.3/profile.php";
         String login_url = "http://10.0.2.2/eventprueba.php";
         //String login_url = "http://equipo11cm.ddns.net/profile.php";
@@ -64,10 +65,10 @@ public class BackgroundWorkerEventPrueba extends AsyncTask<String,Void,String> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }else if (type.equals("unirse")) {
+        }else if (type.equals("mostrarParticipantes")) {
             try {
                 String id = params[1];
-                Log.d("unirsebep1",id);
+                Log.d("mostrarParticipantes",id);
                 URL url = new URL(login_url);
                 HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
                 httpURLConnection.setRequestMethod("POST");
@@ -86,7 +87,7 @@ public class BackgroundWorkerEventPrueba extends AsyncTask<String,Void,String> {
                 String result = "";
                 String line = "";
                 while ((line = bufferedReader.readLine()) != null) {
-                    Log.d("bwep", line);
+                    Log.d("mostrarParticipantes", line);
                     result += line;
                 }
                 Log.d(tag, result);
@@ -99,9 +100,48 @@ public class BackgroundWorkerEventPrueba extends AsyncTask<String,Void,String> {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }else if (type.equals("unirseAlEvento")){
+            try{
+                String id_event_st = params[1];
+                String username = params[2];
+                Log.d(type,id_event_st);
+                Log.d(type,username);
+                URL url = new URL(login_url);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoOutput(true);
+                httpURLConnection.setDoInput(true);
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                BufferedWriter bufferedWriter = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+                String post_data = URLEncoder.encode("type", "UTF-8") + "=" + URLEncoder.encode(type, "UTF-8") + "&"
+                        + URLEncoder.encode("id_event", "UTF-8") + "=" + URLEncoder.encode(id_event_st, "UTF-8")+ "&"
+                        + URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode(username, "UTF-8");
+                Log.d(type,"despues de la conexion");
+                bufferedWriter.write(post_data);
+                bufferedWriter.flush();
+                bufferedWriter.close();
+                outputStream.close();
+                InputStream inputStream = httpURLConnection.getInputStream();
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream, "iso-8859-1"));
+                String result = "";
+                String line = "";
+                while ((line = bufferedReader.readLine()) != null) {
+                    Log.d(type, line);
+                    result += line;
+                }
+                Log.d(type, result);
+                bufferedReader.close();
+                inputStream.close();
+                httpURLConnection.disconnect();
+                return result;
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
 
-        return null;
+            return null;
     }
     @Override
     protected void onPreExecute() {
@@ -113,6 +153,11 @@ public class BackgroundWorkerEventPrueba extends AsyncTask<String,Void,String> {
     protected void onPostExecute(String result) {
         //alertDialog.setMessage(result);
         //alertDialog.show();
+        if(result.equals("una coincidencia")){
+            Log.d("UNIRSE","una coincidencia");
+        }else if(result.equals("no hay coincidencia")){
+            Log.d("UNIRSE","NO HAY COINCIDENCIA");
+        }
     }
 
     @Override
