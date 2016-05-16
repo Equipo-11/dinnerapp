@@ -2,17 +2,14 @@ package com.example.luis.appprueba;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.lang.ref.SoftReference;
 import java.util.concurrent.ExecutionException;
@@ -120,6 +117,16 @@ public class UserProfile extends AppCompatActivity {
         startActivity(myIntent);
 
     }
+
+    public void createdEvents(View view){
+        Intent myIntent2;
+        Intent me = getIntent();
+        String username = me.getStringExtra("iduser");
+        myIntent2 = new Intent(getApplicationContext(), CreatedEventsActivity.class);
+        myIntent2.putExtra("iduser",username);
+        startActivity(myIntent2);
+    }
+
     public void editProfile(View view){
         String type = "editProfile";
         BackgroundWorkerProfile backgroundWorker = new BackgroundWorkerProfile(this);

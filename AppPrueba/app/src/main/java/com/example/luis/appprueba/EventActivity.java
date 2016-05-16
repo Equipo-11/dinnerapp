@@ -63,10 +63,13 @@ public class EventActivity extends AppCompatActivity {
     }
 
     public void unirseAlEvento(View view){
-        String type = "unirse";
+        String type = "unirseAlEvento";
+        Intent me4 = getIntent();
+        String username = me4.getStringExtra("iduser");
         BackgroundWorkerEventPrueba backgroundWorker2 = new BackgroundWorkerEventPrueba(this);
-        String national1=id.getText().toString();
-        backgroundWorker2.execute(type, national1);
+        //String national1=id.getText().toString();
+        Log.d(type, id_event_st+" "+username);
+        backgroundWorker2.execute(type, id_event_st,username);
         String res= null;
         try {
             res = backgroundWorker2.get();
@@ -75,8 +78,10 @@ public class EventActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+        Log.d("unirsefinal",res);
+        Log.d(type,res);
         //String[] split = res.split()
-        String[] split = res.split(",");
+        /*String[] split = res.split(",");
         String result = "";
         Log.d("unirse",split[split.length-1]);
         for(int i=0;i<split.length-1;i++){
@@ -84,11 +89,11 @@ public class EventActivity extends AppCompatActivity {
         }
         result += split[split.length-1]+ ".";
         Log.d("unirse",result);
-        c9.setText(result);
+        c9.setText(result);*/
     }
 
     public void mostrarParticipantes(View view,String id_event){
-        String type = "unirse";
+        String type = "mostrarParticipantes";
         BackgroundWorkerEventPrueba backgroundWorker3 = new BackgroundWorkerEventPrueba(this);
         //String national1=id.getText().toString();
         backgroundWorker3.execute(type, id_event);
@@ -103,12 +108,12 @@ public class EventActivity extends AppCompatActivity {
         //String[] split = res.split()
         String[] split = res.split(",");
         String result = "";
-        Log.d("unirse",split[split.length-1]);
+        Log.d("mostrarParticipantes",split[split.length-1]);
         for(int i=0;i<split.length-1;i++){
             result+= split[i]+", ";
         }
         result += split[split.length-1]+ ".";
-        Log.d("unirse",result);
+        Log.d("mostrarParticipantes",result);
         c9.setText(result);
     }
 
