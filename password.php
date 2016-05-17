@@ -14,9 +14,9 @@ if(($type=='password')==1){
 		if(($pass==$pass1)==1){
 			$mysql_qry2 = "UPDATE users SET pass='$pass2' WHERE id='$id'";
 			$result2 = mysqli_query($conn ,$mysql_qry2);
-			echo "Actualizacion exitosa";
+			echo "Password changed";
 		}else{
-		echo "La contraseña no es correcta";
+		echo "Passwords don't matche";
 		}
 		
 	}

@@ -45,9 +45,10 @@
                 android:background="@android:drawable/ic_menu_edit"
                 android:layout_gravity="right"
                 android:onClick="editP2"
-                android:layout_alignTop="@+id/editeP2"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/textPhone"
+                android:layout_alignTop="@+id/textPhone" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
@@ -57,9 +58,10 @@
                 android:background="@android:drawable/ic_menu_edit"
                 android:layout_gravity="right"
                 android:onClick="editP3"
-                android:layout_below="@+id/editeP2"
+                android:layout_below="@+id/textCountry"
                 android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
+                android:layout_alignParentEnd="true"
+                android:layout_alignTop="@+id/textCountry" />
 
             <TextView
                 android:layout_width="wrap_content"

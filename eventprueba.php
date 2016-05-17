@@ -76,9 +76,9 @@ if(($type == 'eventPrueba')==1){
     //es el autor
     $sql = "DELETE FROM `eventos` WHERE id_event like '$id_event'";
     $result = mysqli_query($conn,$sql);
-    echo "evento eliminado";
+    echo "Event deleted";
   }else{
-    echo "no puedes eliminar el evento";
+    echo "You can't delete this event!";
   }
   
 }

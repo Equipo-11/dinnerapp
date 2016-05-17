@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-05-2016 a las 01:09:57
+-- Tiempo de generación: 16-05-2016 a las 00:13:15
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.20
 
@@ -43,11 +43,8 @@ CREATE TABLE `eventos` (
 --
 
 INSERT INTO `eventos` (`id_event`, `autor`, `national`, `date`, `country`, `city`, `address`, `participant`, `description`) VALUES
-(4, 'luis', 'Mexican', '10/21/2011', 'Spain', 'Seville', 'Santa Maria', '6', 'Tacos'),
-(5, 'ant', 'UK', '10/20/2015', 'Spain', 'Seville', 'Santa...', '5', 'fish and chips'),
-(6, 'ant', 'Spain', '10/05', 'Spain', 'Murcia', 'plaza...', '5', 'tortilla'),
-(7, 'ire', 'Greece', '10/05', 'Spain', 'Seville', 'Santa', '2', 'fsdfsd'),
-(8, 'ant', 'turca', '17', 'espa', 'sevilla', 'calle andres segovia', '2', 'kebab');
+(1, 'ire', 'EEUU', '10/20/2015', 'Spain', 'Seville', 'Santa....', '5', 'hamburguer'),
+(3, 'ire', 'Japan', '11/04/2015', 'Spain', 'Seville', 'Santa Maria...', '5', 'Sushi');
 
 -- --------------------------------------------------------
 
@@ -57,8 +54,8 @@ INSERT INTO `eventos` (`id_event`, `autor`, `national`, `date`, `country`, `city
 
 CREATE TABLE `participantes` (
   `id_participantes` int(11) NOT NULL,
-  `id_evento` int(11) NOT NULL,
-  `id_usuario` int(11) NOT NULL
+  `id_evento` text NOT NULL,
+  `id_usuario` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -66,12 +63,11 @@ CREATE TABLE `participantes` (
 --
 
 INSERT INTO `participantes` (`id_participantes`, `id_evento`, `id_usuario`) VALUES
-(22, 5, 1),
-(23, 6, 1),
-(31, 7, 3),
-(33, 8, 1),
-(34, 8, 3),
-(55, 4, 3);
+(1, '1', '1'),
+(2, '1', '2'),
+(3, '3', '1'),
+(4, '3', '2'),
+(5, '3', '3');
 
 -- --------------------------------------------------------
 
@@ -95,12 +91,7 @@ CREATE TABLE `users` (
 INSERT INTO `users` (`id_user`, `id`, `pass`, `email`, `phone`, `country`) VALUES
 (1, 'ant', 'ant', 'ant', '618', 'Spain'),
 (2, 'antonio', 'ant', 'ant', '618', 'Spain'),
-(3, 'ire', 'ire', 'ire', '543534', 'Spain'),
-(4, 'luis', 'luis', 'luis', '48902384238', 'Spain'),
-(5, 'david', 'david', 'david', '9409293', 'Spain'),
-(6, 'sero', 'sero', 'sero', '78689679', 'UK'),
-(7, 'raquel', 'raquel', 'raquel', '5435435943', 'Spain'),
-(8, 'liandre', 'liandre', 'liandre', '42394023904932', 'Spain');
+(3, 'ire', 'ire', 'ire', '543534', 'Spain');
 
 --
 -- Índices para tablas volcadas
@@ -116,9 +107,7 @@ ALTER TABLE `eventos`
 -- Indices de la tabla `participantes`
 --
 ALTER TABLE `participantes`
-  ADD PRIMARY KEY (`id_participantes`),
-  ADD KEY `id_evento` (`id_evento`),
-  ADD KEY `id_usuario` (`id_usuario`);
+  ADD PRIMARY KEY (`id_participantes`);
 
 --
 -- Indices de la tabla `users`
@@ -134,27 +123,17 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `eventos`
 --
 ALTER TABLE `eventos`
-  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_event` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `participantes`
 --
 ALTER TABLE `participantes`
-  MODIFY `id_participantes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
+  MODIFY `id_participantes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `participantes`
---
-ALTER TABLE `participantes`
-  ADD CONSTRAINT `eliminarEvento` FOREIGN KEY (`id_evento`) REFERENCES `eventos` (`id_event`) ON DELETE CASCADE ON UPDATE CASCADE;
-
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
