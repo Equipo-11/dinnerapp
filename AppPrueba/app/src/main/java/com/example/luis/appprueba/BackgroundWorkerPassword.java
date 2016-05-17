@@ -76,13 +76,9 @@ public class BackgroundWorkerPassword  extends AsyncTask<String,Void,String> {
     }
 
     protected void onPreExecute() {
-        alertDialog = new AlertDialog.Builder(context).create();
-        alertDialog.setTitle("Pass Status");
     }
 
     protected void onPostExecute(String result) {
-        alertDialog.setMessage(result);
-        alertDialog.show();
     }
 
     protected void onProgressUpdate(Void... values) {

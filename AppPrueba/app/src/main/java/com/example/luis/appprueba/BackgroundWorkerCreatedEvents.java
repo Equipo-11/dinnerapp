@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -82,7 +83,6 @@ public class BackgroundWorkerCreatedEvents extends AsyncTask<String,Void,String>
 
     @Override
     protected void onPostExecute(String result) {
-
     }
 
     @Override

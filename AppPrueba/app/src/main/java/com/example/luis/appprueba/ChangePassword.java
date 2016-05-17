@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import java.lang.ref.SoftReference;
 import java.util.concurrent.ExecutionException;
@@ -30,7 +31,7 @@ public class ChangePassword extends AppCompatActivity {
         p1 = pass1.getText().toString();
         p2 = pass2.getText().toString();
         p3 = pass3.getText().toString();
-        String res= "La contraseña no coincide";
+        String res= "Passwords don't matche";
         Log.d("PASSWORD",res);
         if(p2.equals(p3)){
             Intent me = getIntent();
@@ -47,11 +48,13 @@ public class ChangePassword extends AppCompatActivity {
                 e.printStackTrace();
             }
             Log.d(tag,res);
+            Toast.makeText(this,res, Toast.LENGTH_SHORT).show();
            /* alertDialog.setMessage(res);
             alertDialog.show();*/
             finish();
         }else{
             Log.d("PASSWORDelse",res);
+            Toast.makeText(this,res, Toast.LENGTH_SHORT).show();
             /*alertDialog.setMessage(res);
             alertDialog.show();*/
         }

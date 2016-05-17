@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.concurrent.ExecutionException;
 
 public class EventActivity extends AppCompatActivity {
     String tag = "EVENTOPRUEBA";
+    String source;
     EditText id;
     String id_event_st;
     TextView c1,c2,c3,c4,c5,c6,c7,c8,c9;
@@ -38,6 +40,8 @@ public class EventActivity extends AppCompatActivity {
         Intent me = getIntent();
         id_event_st = me.getStringExtra("idev");
         mostrarPrueba(id_event_st);
+
+
     }
     public void backButton(View view){
         finish();
@@ -90,7 +94,7 @@ public class EventActivity extends AppCompatActivity {
         BackgroundWorkerEventPrueba backgroundWorker2 = new BackgroundWorkerEventPrueba(this);
         //String national1=id.getText().toString();
         Log.d(type, id_event_st+" "+username);
-        backgroundWorker2.execute(type, id_event_st,username);
+        backgroundWorker2.execute(type, id_event_st, username);
         String res= null;
         try {
             res = backgroundWorker2.get();
@@ -119,6 +123,15 @@ public class EventActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
+        Log.d("DELETE",res);
+        if(res.equals("Event deleted")){
+            Toast.makeText(this,res, Toast.LENGTH_SHORT).show();
+            finish();
+        }
+        if(res.equals("You can't delete this event!")){
+            Toast.makeText(this,res, Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     public void mostrarParticipantes(String id_event){

@@ -16,7 +16,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,14 +46,12 @@ public class MainMenuActivity extends AppCompatActivity {
         }
         Log.d(tag, res);
         String[] split = res.split("--");
-        Log.d(tag, split[0]);
-        Log.d(tag, split[1]);
 
         ArrayList<String> items = new ArrayList<>();
 
         for(String i:split){
             String[] split1 = i.split(",");
-            String s = "· Autor: "+split1[0]+" , CF: "+split1[1]+" , Date: "+split1[2]+" , Country: "+split1[3]+" , City: "+split1[4]+" , Num. of participants: "+split1[5]+" , Event Code: "+split1[6];
+            String s = " Autor: "+split1[0]+"  ,  CountryFood: "+split1[1]+" \n, Date: "+split1[2]+"  ,  Country: "+split1[3]+" \n, City: "+split1[4]+"  ,  Num. of participants: "+split1[5]+" \n, Event Code: "+split1[6];
             items.add(s);
         }
 
@@ -125,6 +122,7 @@ public class MainMenuActivity extends AppCompatActivity {
             case R.id.search:
                 Intent myIntent3;
                 myIntent3 = new Intent(getApplicationContext(), SearchEvent.class);
+                myIntent3.putExtra("iduser",username);
                 startActivity(myIntent3);
                 break;
             case R.id.action_settings:

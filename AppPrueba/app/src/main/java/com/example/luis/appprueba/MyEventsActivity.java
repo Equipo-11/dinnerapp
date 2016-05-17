@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.concurrent.ExecutionException;
@@ -38,19 +39,23 @@ public class MyEventsActivity extends AppCompatActivity {
             e.printStackTrace();
         }
         Log.d(tag, res);
-        String[] split = res.split("--");
-        //Log.d(tag, split[0]);
-        //Log.d(tag, split[1]);
+        if(res.equals("You didn't join any event!")) {
+            Toast.makeText(this, res, Toast.LENGTH_SHORT).show();
+            finish();
+        }else {
+            String[] split = res.split("--");
+            //Log.d(tag, split[0]);
+            //Log.d(tag, split[1]);
 
-        ArrayList<String> items = new ArrayList<>();
+            ArrayList<String> items = new ArrayList<>();
 
-        for(String i:split){
-            String[] split1 = i.split(",");
-            String s = "· Autor: "+split1[0]+" , CF: "+split1[1]+" , Date: "+split1[2]+" , Country: "+split1[3]+" , City: "+split1[4]+" , Num. of participants: "+split1[5]+" , Event Code: "+split1[6];
-            items.add(s);
+            for (String i : split) {
+                String[] split1 = i.split(",");
+                String s = " Autor: " + split1[0] + "  ,  CountryFood: " + split1[1] + " \n, Date: " + split1[2] + "  ,  Country: " + split1[3] + " \n, City: " + split1[4] + "  ,  Num. of participants: " + split1[5] + " \n, Event Code: " + split1[6];
+                items.add(s);
 
-        }
-        //Log.d(tag, String.valueOf(split.length));
+            }
+            //Log.d(tag, String.valueOf(split.length));
 
         /*String[] split = res.split(",");
 
@@ -64,30 +69,31 @@ public class MyEventsActivity extends AppCompatActivity {
         editePhone = split[2];
         editeCountry = split[3];
         */
-        m_listview = (ListView) findViewById(R.id.id_list_view);
+            m_listview = (ListView) findViewById(R.id.id_list_view);
 
 
-        ArrayAdapter<String> adapter =
-                new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+            ArrayAdapter<String> adapter =
+                    new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
 
 
-        m_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            m_listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String evento = ((TextView) view).getText().toString();
-                Log.d(tag, evento);
-                String[] split1 = evento.split(",");
-                String[] idev = split1[6].split("Event Code: ");
-                Log.d(tag, idev[1]);
-                Intent myIntent4;
-                myIntent4 = new Intent(getApplicationContext(), EventActivity.class);
-                myIntent4.putExtra("idev",idev[1]);
-                myIntent4.putExtra("iduser",username);
-                startActivity(myIntent4);
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                    String evento = ((TextView) view).getText().toString();
+                    Log.d(tag, evento);
+                    String[] split1 = evento.split(",");
+                    String[] idev = split1[6].split("Event Code: ");
+                    Log.d(tag, idev[1]);
+                    Intent myIntent4;
+                    myIntent4 = new Intent(getApplicationContext(), EventActivity.class);
+                    myIntent4.putExtra("idev", idev[1]);
+                    myIntent4.putExtra("iduser", username);
+                    startActivity(myIntent4);
 
-            }
-        });
-        m_listview.setAdapter(adapter);
+                }
+            });
+            m_listview.setAdapter(adapter);
+        }
 
     }
 

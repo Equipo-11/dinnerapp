@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
+
 import java.util.concurrent.ExecutionException;
 
 public class SearchEvent extends AppCompatActivity {
     EditText country,city,date,food;
     String tag = "SEARCH";
-
+    String username;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,10 @@ public class SearchEvent extends AppCompatActivity {
         city = (EditText) findViewById(R.id.editCitySearch);
         date = (EditText) findViewById(R.id.editDateSearch);
         food = (EditText) findViewById(R.id.editFoodSearch);
+        Intent me = getIntent();
+        username = me.getStringExtra("iduser");
+        Intent myIntent = new Intent(getApplicationContext(),FiltredEvents.class);
+        myIntent.putExtra("iduser",username);
 
     }
 
@@ -44,17 +50,21 @@ public class SearchEvent extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        String[] row = res.split("--");
-        Intent myIntent = new Intent(getApplicationContext(),FiltredEvents.class);
-        myIntent.putExtra("eventos",row);
+        if(res.equals("No event matches")) {
+            Toast.makeText(this, res, Toast.LENGTH_SHORT).show();
+            finish();
+        }else {
+            String[] row = res.split("--");
+            Intent myIntent = new Intent(getApplicationContext(), FiltredEvents.class);
+            myIntent.putExtra("eventos", row);
         /*int nr =  (row.length);
         for(int i = 0;i<row.length;i++) {
             String[] split = row[i].split(",");
             Log.d(tag,split[1]);
             myIntent.putExtra("eventos",);
         }*/
-        startActivity(myIntent);
-
+            startActivity(myIntent);
+        }
 
     }
 }

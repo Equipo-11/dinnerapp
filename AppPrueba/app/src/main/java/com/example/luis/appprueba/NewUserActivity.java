@@ -7,6 +7,8 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.concurrent.ExecutionException;
+
 public class NewUserActivity extends AppCompatActivity {
 
     EditText et_id,et_email,et_pass,et_phone,et_country;
@@ -33,6 +35,15 @@ public class NewUserActivity extends AppCompatActivity {
         String type = "newuser";
         BackgroundWorkerNewUser backgroundWorker = new BackgroundWorkerNewUser(this);
         backgroundWorker.execute(type, id, pass, email, phone, country);
+        String res = null;
+        try {
+            res = backgroundWorker.get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        Toast.makeText(this,res, Toast.LENGTH_SHORT).show();
         finish();
     }
 
