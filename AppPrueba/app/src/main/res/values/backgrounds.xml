@@ -2,4 +2,5 @@
 <resources>
     <drawable name="edit">@android:drawable/ic_menu_edit</drawable>
     <drawable name="tick">@drawable/tick30x30</drawable>
+    <drawable name="fondo">@drawable/fondo1</drawable>
 </resources>

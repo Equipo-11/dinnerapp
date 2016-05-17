@@ -46,8 +46,11 @@
             />
         <activity
             android:name=".FiltredEvents"
-            android:label="FiltredEvents"
+            android:label="Filtred Events"
             />
+        <activity
+            android:name=".ChangePassword"
+            android:label="Change Password"/>
 
     </application>
 

@@ -7,17 +7,20 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.luis.appprueba.SearchEvent">
+    tools:context="com.example.luis.appprueba.SearchEvent"
+    android:background="@color/rojo">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="Cancel"
         android:id="@+id/searchBack"
         android:onClick="searchBack"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/blanco" />
 
     <Button
         android:layout_width="wrap_content"
@@ -27,7 +30,9 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:onClick="searchEvent" />
+        android:onClick="searchEvent"
+        android:background="@color/colorPrimary"
+        android:textColor="@color/blanco" />
         <!-- android:onClick="searchEvent" -->
 
 
@@ -35,12 +40,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editCountrySearch"
+        android:hint="Country"
         android:layout_alignParentTop="true"
         android:layout_alignRight="@+id/buttonSearch"
         android:layout_alignEnd="@+id/buttonSearch"
         android:layout_marginTop="42dp"
         android:layout_toRightOf="@+id/foodSearch"
-        android:layout_toEndOf="@+id/foodSearch" />
+        android:layout_toEndOf="@+id/foodSearch"
+        android:textColorHint="@color/negro" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -77,7 +84,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Country of food"
+        android:text="Country Food"
         android:id="@+id/foodSearch"
         android:layout_below="@+id/dateSearch"
         android:layout_alignParentLeft="true"
@@ -88,31 +95,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editCitySearch"
+        android:hint="City"
         android:layout_alignBottom="@+id/citySearch"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignLeft="@+id/editCountrySearch"
-        android:layout_alignStart="@+id/editCountrySearch" />
+        android:layout_alignStart="@+id/editCountrySearch"
+        android:textColorHint="@color/negro" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/editFoodSearch"
+        android:hint="Country Food"
         android:layout_alignBottom="@+id/foodSearch"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_toRightOf="@+id/foodSearch"
-        android:layout_toEndOf="@+id/foodSearch" />
+        android:layout_toEndOf="@+id/foodSearch"
+        android:textColorHint="@color/negro" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="date"
+        android:hint="Date (dd/mm/aaaa)"
         android:ems="10"
         android:id="@+id/editDateSearch"
         android:layout_above="@+id/foodSearch"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_alignLeft="@+id/editFoodSearch"
-        android:layout_alignStart="@+id/editFoodSearch" />
+        android:layout_alignStart="@+id/editFoodSearch"
+        android:textColorHint="@color/negro" />
 </RelativeLayout>

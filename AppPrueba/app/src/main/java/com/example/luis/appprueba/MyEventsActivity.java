@@ -1,6 +1,7 @@
 package com.example.luis.appprueba;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -23,7 +24,6 @@ public class MyEventsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
-
         String type = "mainmenu";
         BackgroundWorkerMyEvents backgroundWorker = new BackgroundWorkerMyEvents(this);
         Intent me = getIntent();
@@ -48,6 +48,7 @@ public class MyEventsActivity extends AppCompatActivity {
             String[] split1 = i.split(",");
             String s = "· Autor: "+split1[0]+" , CF: "+split1[1]+" , Date: "+split1[2]+" , Country: "+split1[3]+" , City: "+split1[4]+" , Num. of participants: "+split1[5]+" , Event Code: "+split1[6];
             items.add(s);
+
         }
         //Log.d(tag, String.valueOf(split.length));
 

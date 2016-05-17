@@ -8,4 +8,6 @@
     <color name="colorBack">#87CEEB</color>
     <color name="colorBut">#6ecce7</color>
     <color name="blanco">#FFFFFF</color>
+    <color name="negro">#FF848383</color>
+    <color name="rojo">#ffe6e4</color>
 </resources>

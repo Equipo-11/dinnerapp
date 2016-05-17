@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.luis.appprueba.UserProfile">
+    tools:context="com.example.luis.appprueba.UserProfile"
+    android:background="@color/rojo">
 
     <LinearLayout
         android:orientation="vertical"
@@ -16,7 +17,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:weightSum="1">
+        android:weightSum="1"
+        android:id="@+id/linearLayout">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -70,8 +72,7 @@
                 android:editable="true"
                 android:paddingTop="10dp"
                 android:layout_alignParentTop="true"
-                android:layout_alignLeft="@+id/textCountry"
-                android:layout_alignStart="@+id/textCountry" />
+                android:layout_centerHorizontal="true" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -98,9 +99,9 @@
                 android:editable="false"
                 android:paddingTop="10dp"
                 android:visibility="visible"
-                android:layout_alignStart="@+id/editeP3"
-                android:layout_alignTop="@+id/textView17"
-                android:layout_alignLeft="@+id/editP2" />
+                android:layout_above="@+id/textCountry"
+                android:layout_alignLeft="@+id/textEmail"
+                android:layout_alignStart="@+id/textEmail" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -113,14 +114,14 @@
                 android:editable="false"
                 android:paddingTop="10dp"
                 android:layout_alignTop="@+id/textView18"
-                android:layout_alignLeft="@+id/changePass"
-                android:layout_alignStart="@+id/changePass" />
+                android:layout_alignLeft="@+id/textPhone"
+                android:layout_alignStart="@+id/textPhone" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="ID"
+                android:text="ID:"
                 android:id="@+id/textView15"
                 android:textSize="25dp"
                 android:paddingBottom="15dp"
@@ -136,7 +137,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Email"
+                android:text="Email:"
                 android:id="@+id/textView16"
                 android:textSize="25dp"
                 android:paddingBottom="15dp"
@@ -147,7 +148,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Phone"
+                android:text="Phone:"
                 android:id="@+id/textView17"
                 android:textSize="25dp"
                 android:paddingBottom="15dp"
@@ -158,7 +159,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Country"
+                android:text="Country:"
                 android:id="@+id/textView18"
                 android:textSize="25dp"
                 android:paddingBottom="15dp"
@@ -168,10 +169,10 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Change Password"
+                android:text="  Change Password  "
                 android:id="@+id/changePass"
                 android:onClick="changePassword"
-                android:background="#fdeded"
+                android:background="#fcb5b5"
                 android:layout_alignParentBottom="true"
                 android:layout_centerHorizontal="true" />
 
@@ -182,13 +183,8 @@
                 android:visibility="invisible"
                 android:editable="true"
                 android:inputType="text"
-                android:layout_below="@+id/textEmail"
-                android:layout_alignLeft="@+id/textEmail"
-                android:layout_alignStart="@+id/textEmail"
-                android:layout_above="@+id/textPhone"
-                android:layout_alignTop="@+id/textEmail"
-                android:layout_alignRight="@+id/changePass"
-                android:layout_alignEnd="@+id/changePass" />
+                android:layout_below="@+id/textID"
+                android:layout_centerHorizontal="true" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -197,13 +193,8 @@
                 android:visibility="invisible"
                 android:editable="true"
                 android:inputType="number"
-                android:layout_alignLeft="@+id/textPhone"
-                android:layout_alignStart="@+id/textPhone"
-                android:layout_above="@+id/textCountry"
-                android:layout_alignTop="@+id/textPhone"
-                android:layout_below="@+id/textPhone"
-                android:layout_alignRight="@+id/editeP3"
-                android:layout_alignEnd="@+id/editeP3" />
+                android:layout_below="@+id/editeP1"
+                android:layout_centerHorizontal="true" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -212,17 +203,37 @@
                 android:visibility="invisible"
                 android:editable="true"
                 android:inputType="text"
-                android:layout_alignTop="@+id/textCountry"
-                android:layout_alignStart="@+id/editeP1"
-                android:layout_alignRight="@+id/editP3"
-                android:layout_alignEnd="@+id/changePass"
-                android:layout_alignLeft="@+id/textView18"
-                android:layout_below="@+id/textCountry"
-                android:layout_alignBottom="@+id/textCountry" />
+                android:layout_below="@+id/editeP2"
+                android:layout_centerHorizontal="true" />
 
         </RelativeLayout>
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My events"
+        android:id="@+id/button6"
+        android:onClick="myEvents"
+        android:layout_weight="0.11"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/blanco"
+        android:background="@color/colorPrimary" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Created events"
+        android:id="@+id/button5"
+        android:onClick="createdEvents"
+        android:layout_weight="0.11"
+        android:layout_gravity="center_horizontal"
+        android:textColor="@color/blanco"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
@@ -233,38 +244,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:visibility="invisible"
-        android:onClick="editProfile"/>
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Back"
-        android:onClick="backButton"
-        android:id="@+id/button4"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="My events"
-        android:id="@+id/button6"
-        android:onClick="myEvents"
-        android:layout_weight="0.22"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Created events"
-        android:id="@+id/button5"
-        android:onClick="createdEvents"
-        android:layout_gravity="right"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/editProfileButton"
-        android:layout_alignStart="@+id/editProfileButton" />
+        android:onClick="editProfile"
+        android:textColor="@color/blanco"
+        android:background="@color/colorPrimary" />
 
 </RelativeLayout>
 
