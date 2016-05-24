@@ -37,9 +37,9 @@ public class BackgroundWorkerSearch extends AsyncTask<String,Void,String> {
         String city = params[2];
         String date = params[3];
         String food = params[4];
-        //String login_url = "http://192.168.1.3/s_event.php";
-        String login_url = "http://10.0.2.2/s_event.php";
-        //String login_url = "http://equipo11cm.ddns.net/s_event.php";
+        //String login_url = "http://192.168.1.6/s_event.php";
+        //String login_url = "http://10.0.2.2/s_event.php";
+        String login_url = "http://equipo11cm.ddns.net/s_event.php";
         if(type.equals("searchEvent")) {
             try {
                 URL url = new URL(login_url);

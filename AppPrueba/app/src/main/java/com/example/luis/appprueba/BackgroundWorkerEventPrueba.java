@@ -29,9 +29,9 @@ public class BackgroundWorkerEventPrueba extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... params) {
         String type = params[0];
         Log.d("TYPE",type);
-        //String login_url = "http://192.168.1.3/profile.php";
-        String login_url = "http://10.0.2.2/eventprueba.php";
-        //String login_url = "http://equipo11cm.ddns.net/profile.php";
+        //String login_url = "http://192.168.1.6/eventprueba.php";
+        //String login_url = "http://10.0.2.2/eventprueba.php";
+        String login_url = "http://equipo11cm.ddns.net/eventprueba.php";
         if(type.equals("eventPrueba")) {
             try {
                 String id = params[1];

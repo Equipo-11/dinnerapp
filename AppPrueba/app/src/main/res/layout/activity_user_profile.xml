@@ -74,7 +74,8 @@
                 android:editable="true"
                 android:paddingTop="10dp"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_alignLeft="@+id/changePass"
+                android:layout_alignStart="@+id/changePass" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -87,8 +88,7 @@
                 android:editable="false"
                 android:paddingTop="10dp"
                 android:layout_below="@+id/textID"
-                android:layout_alignLeft="@+id/textID"
-                android:layout_alignStart="@+id/textID" />
+                android:layout_alignLeft="@+id/changePass" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -101,9 +101,8 @@
                 android:editable="false"
                 android:paddingTop="10dp"
                 android:visibility="visible"
-                android:layout_above="@+id/textCountry"
-                android:layout_alignLeft="@+id/textEmail"
-                android:layout_alignStart="@+id/textEmail" />
+                android:layout_below="@+id/textEmail"
+                android:layout_alignLeft="@+id/changePass" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -115,9 +114,8 @@
                 android:textSize="25sp"
                 android:editable="false"
                 android:paddingTop="10dp"
-                android:layout_alignTop="@+id/textView18"
-                android:layout_alignLeft="@+id/textPhone"
-                android:layout_alignStart="@+id/textPhone" />
+                android:layout_below="@+id/textPhone"
+                android:layout_alignLeft="@+id/changePass" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -186,7 +184,10 @@
                 android:editable="true"
                 android:inputType="text"
                 android:layout_below="@+id/textID"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:layout_alignLeft="@+id/changePass"
+                android:layout_alignRight="@+id/textEmail"
+                android:layout_alignBottom="@+id/textEmail" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -195,8 +196,11 @@
                 android:visibility="invisible"
                 android:editable="true"
                 android:inputType="number"
-                android:layout_below="@+id/editeP1"
-                android:layout_centerHorizontal="true" />
+                android:layout_below="@+id/textEmail"
+                android:layout_centerHorizontal="true"
+                android:layout_alignLeft="@+id/textPhone"
+                android:layout_alignRight="@+id/textPhone"
+                android:layout_alignBottom="@+id/textPhone" />
 
             <EditText
                 android:layout_width="wrap_content"
@@ -205,8 +209,11 @@
                 android:visibility="invisible"
                 android:editable="true"
                 android:inputType="text"
-                android:layout_below="@+id/editeP2"
-                android:layout_centerHorizontal="true" />
+                android:layout_below="@+id/textPhone"
+                android:layout_centerHorizontal="true"
+                android:layout_alignBottom="@+id/textCountry"
+                android:layout_alignLeft="@+id/textCountry"
+                android:layout_alignRight="@+id/textCountry" />
 
         </RelativeLayout>
 

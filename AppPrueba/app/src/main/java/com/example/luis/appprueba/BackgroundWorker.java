@@ -7,6 +7,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.util.Log;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -33,7 +34,9 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-        String login_url = "http://10.0.2.2/login.php";
+        //String login_url = "http://192.168.1.6/login.php";
+        //String login_url = "http://10.0.2.2/login.php";
+        String login_url = "http://equipo11cm.ddns.net/login.php";
         if(type.equals("login")) {
             try {
                 username = params[1];
@@ -62,6 +65,7 @@ public class BackgroundWorker extends AsyncTask<String,Void,String> {
                 bufferedReader.close();
                 inputStream.close();
                 httpURLConnection.disconnect();
+                Log.d("LOGIN",result);
                 return result;
             } catch (MalformedURLException e) {
                 e.printStackTrace();

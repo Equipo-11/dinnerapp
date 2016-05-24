@@ -35,9 +35,9 @@ public class BackgroundWorkerMainMenu extends AsyncTask<String,Void,String> {
     protected String doInBackground(String... params) {
         String type = params[0];
         Log.d(tag,type);
-        //String login_url = "http://192.168.1.3/profile.php";
-        String login_url = "http://10.0.2.2/mainmenu.php";
-        //String login_url = "http://equipo11cm.ddns.net/profile.php";
+        //String login_url = "http://192.168.1.6/mainmenu.php";
+        //String login_url = "http://10.0.2.2/mainmenu.php";
+        String login_url = "http://equipo11cm.ddns.net/mainmenu.php";
         if(type.equals("mainmenu")) {
             try {
                 String id = params[1];

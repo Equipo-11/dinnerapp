@@ -32,7 +32,9 @@ public class BackgroundWorkerNewEvent extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-        String login_url = "http://10.0.2.2/newevent.php";
+        //String login_url = "http://192.168.1.6/newevent.php";
+        //String login_url = "http://10.0.2.2/newevent.php";
+        String login_url = "http://equipo11cm.ddns.net/newevent.php";
         if(type.equals("newevent")) {
             try {
                 String autor = params[1];

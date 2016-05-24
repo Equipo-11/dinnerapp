@@ -31,9 +31,9 @@ public class BackgroundWorkerPassword  extends AsyncTask<String,Void,String> {
     @Override
     protected String doInBackground(String... params) {
         String type = params[0];
-        //String login_url = "http://192.168.1.3/profile.php";
-        String login_url = "http://10.0.2.2/password.php";
-        //String login_url = "http://equipo11cm.ddns.net/profile.php";
+        //String login_url = "http://192.168.1.6/password.php";
+        //String login_url = "http://10.0.2.2/password.php";
+        String login_url = "http://equipo11cm.ddns.net/password.php";
         if(type.equals("password")) {
             try {
                 String username = params[1];
