@@ -137,7 +137,6 @@ public class EventActivity extends AppCompatActivity {
     public void mostrarParticipantes(String id_event){
         String type = "mostrarParticipantes";
         BackgroundWorkerEventPrueba backgroundWorker3 = new BackgroundWorkerEventPrueba(this);
-        //String national1=id.getText().toString();
         backgroundWorker3.execute(type, id_event);
         String res= null;
         try {
@@ -147,7 +146,6 @@ public class EventActivity extends AppCompatActivity {
         } catch (ExecutionException e) {
             e.printStackTrace();
         }
-        //String[] split = res.split()
         String[] split = res.split(",");
         String result = "";
         arrayParticipantes = new ArrayList<String>();

@@ -21,9 +21,6 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
-/**
- * Created by ProgrammingKnowledge on 1/5/2016.
- */
 public class BackgroundWorkerNewUser extends AsyncTask<String,Void,String> {
     Context context;
     AlertDialog alertDialog;

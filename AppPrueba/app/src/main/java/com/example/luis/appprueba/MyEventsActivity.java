@@ -1,12 +1,9 @@
 package com.example.luis.appprueba;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -57,18 +54,7 @@ public class MyEventsActivity extends AppCompatActivity {
             }
             //Log.d(tag, String.valueOf(split.length));
 
-        /*String[] split = res.split(",");
 
-        Intent myIntent = new Intent(getApplicationContext(),this.getClass());
-        myIntent.getExtras();
-        id.setText(username);
-        email.setText(split[1]);
-        phone.setText(split[2]);
-        country.setText(split[3]);
-        editeEmail = split[1];
-        editePhone = split[2];
-        editeCountry = split[3];
-        */
             m_listview = (ListView) findViewById(R.id.id_list_view);
 
 

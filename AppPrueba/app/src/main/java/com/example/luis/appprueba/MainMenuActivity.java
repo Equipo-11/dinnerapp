@@ -1,14 +1,10 @@
 package com.example.luis.appprueba;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import android.view.View;
@@ -18,7 +14,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 public class MainMenuActivity extends AppCompatActivity {
@@ -57,18 +52,6 @@ public class MainMenuActivity extends AppCompatActivity {
 
         //Log.d(tag, String.valueOf(split.length));
 
-        /*String[] split = res.split(",");
-
-        Intent myIntent = new Intent(getApplicationContext(),this.getClass());
-        myIntent.getExtras();
-        id.setText(username);
-        email.setText(split[1]);
-        phone.setText(split[2]);
-        country.setText(split[3]);
-        editeEmail = split[1];
-        editePhone = split[2];
-        editeCountry = split[3];
-        */
         m_listview = (ListView) findViewById(R.id.id_list_view);
 
 

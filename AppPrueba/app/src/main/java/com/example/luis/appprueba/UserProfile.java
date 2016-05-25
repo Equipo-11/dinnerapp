@@ -10,8 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import java.lang.ref.SoftReference;
 import java.util.concurrent.ExecutionException;
 
 public class UserProfile extends AppCompatActivity {

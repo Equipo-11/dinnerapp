@@ -47,28 +47,6 @@ public class NewUserActivity extends AppCompatActivity {
         finish();
     }
 
-    /*public void enviarbutton(View v) {
-        id = pid.getText().toString();
-        correo = pcorreo.getText().toString();
-        pass = ppass.getText().toString();
-        //pass2 = ppass2.getText().toString();
-        //telefono = ptelefono.getText().toString();
-            /*if (pass != pass2) {
-                Toast.makeText(getApplicationContext(), "Los campos de contraseña no coinciden.", Toast.LENGTH_LONG).show();
-            } else if(id == "" || correo == "" || telefono == "" || pass == "" || pass2 == "") {
-                Toast.makeText(getApplicationContext(), "Hay campos del formulario vacíos.", Toast.LENGTH_LONG).show();
-            }else{
-                new ConexionDB().execute(url, dbName, id, correo, pass, telefono);
-            }*/
-        //String method = "register";
-        //BackgroundTask backgroundTask = new BackgroundTask(this);
-        //backgroundTask.execute(/*method,*/id,correo,pass/*,telefono*/);
-        /*Toast.makeText(this, "Signing up...", Toast.LENGTH_SHORT).show();
-        new BackgroundTask(this).execute(id, correo, pass);
-        finish();
-    }*/
-
-
 
     public void cancelbutton(View view) {
         finish();
